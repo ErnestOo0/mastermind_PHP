@@ -21,8 +21,8 @@ if(!empty($_GET)){
     //var_dump($_SESSION["master"]);
     if(!empty($_GET["reset"])){
         
+        unset($jeu);
         $_SESSION = array();//on reset la session
-        var_dump($_SESSION["master"]);
     }else{
         $try = "";
     
@@ -36,8 +36,8 @@ if(!empty($_GET)){
         //var_dump($histo);
         foreach($histo as $ess){//on parcours l'historique des essaies
             echo "<tr>";
-            var_dump($ess);
-            foreach($i as $ess){
+            //var_dump($ess);
+            foreach($ess as $i){
                 echo "<td>".$i."</td>";
             }
             echo "</tr>";
