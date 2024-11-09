@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MasterMind le jeu</title>
+    <?php require "masterMindCon.php"; ?>
 </head>
 <body>
     <h1>MASTERMIND</h1>
@@ -19,7 +20,10 @@
         </tr>
     
     <?php 
-        require "masterMindCon.php";
+        if(isset($jeu)){
+            affhisto($jeu->getHistorique());
+        }
+        
     ?>
     
     </table>
@@ -27,16 +31,14 @@
     <form method = "get">
         
         <?php
-            for($i=0;$i<4;$i++){
-                echo "<input type = 'number' name = 'propal$i' min = '0' max = '9' step = '1' value = '0' required>";
-            }
+            affpropal($taille)
         ?>
         
         <input type ="submit">
     <form>
     
     <form>
-        <input type="submit" name="reset" value="true">
+        <input type="submit" name="reset" value="reset">
     <form>
 
         
